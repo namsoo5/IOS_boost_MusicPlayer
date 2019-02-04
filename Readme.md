@@ -55,7 +55,5 @@ self.present(alert, animated: true, completion: nil)  //해당 컨텐츠(alert)�
 ```
 ---
 ## img
-<center> 
-<img src="./img/main.png" height="320" width="180">
-<img src="./img/alert.png" height="320" width="180">
-</center> 
+<center> <img src="./img/main.png" height="320" width="180"></center> 
+<center> <img src="./img/alert.png" height="320" width="180"></center> 
