@@ -18,32 +18,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="button_play" translatesAutoresizingMaskIntoConstraints="NO" id="bx8-Fn-iDb">
-                                <rect key="frame" x="94" y="139" width="187" height="189"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHQ-pO-bsg">
-                                <rect key="frame" x="166.5" y="358" width="42" height="21"/>
+                                <rect key="frame" x="166.5" y="300" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DaA-Ef-jFM">
-                                <rect key="frame" x="18" y="409" width="339" height="31"/>
+                                <rect key="frame" x="34" y="351" width="307" height="31"/>
+                                <connections>
+                                    <action selector="slider:" destination="BYZ-38-t0r" eventType="valueChanged" id="pjt-3v-w1o"/>
+                                </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ahU-KP-vrR">
+                                <rect key="frame" x="67" y="89" width="241" height="189"/>
+                                <state key="normal" title="Button" image="button_play"/>
+                                <state key="selected" image="button_pause"/>
+                                <connections>
+                                    <action selector="btclick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Htw-Nn-EYX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bx8-Fn-iDb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-100" id="39d-pn-Vqh"/>
-                            <constraint firstItem="DaA-Ef-jFM" firstAttribute="top" secondItem="iHQ-pO-bsg" secondAttribute="bottom" constant="30" id="8F9-Zt-6Sk"/>
+                            <constraint firstItem="ahU-KP-vrR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-150" id="9xT-SS-k9j"/>
                             <constraint firstItem="DaA-Ef-jFM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fb8-wM-B96"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DaA-Ef-jFM" secondAttribute="trailing" constant="20" id="Hfu-gK-x18"/>
-                            <constraint firstItem="DaA-Ef-jFM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="KJC-g7-Geh"/>
-                            <constraint firstItem="bx8-Fn-iDb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Lab-mK-f52"/>
-                            <constraint firstItem="iHQ-pO-bsg" firstAttribute="top" secondItem="bx8-Fn-iDb" secondAttribute="bottom" constant="30" id="itL-cY-vEG"/>
+                            <constraint firstItem="ahU-KP-vrR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFZ-l5-hlS"/>
+                            <constraint firstItem="DaA-Ef-jFM" firstAttribute="top" secondItem="iHQ-pO-bsg" secondAttribute="bottom" constant="30" id="dxP-CH-SpJ"/>
                             <constraint firstItem="iHQ-pO-bsg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kSC-ve-irh"/>
+                            <constraint firstItem="DaA-Ef-jFM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="rIK-hW-CNE"/>
+                            <constraint firstItem="ahU-KP-vrR" firstAttribute="bottom" secondItem="iHQ-pO-bsg" secondAttribute="bottom" constant="-43" id="siA-Ai-0cb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DaA-Ef-jFM" secondAttribute="trailing" constant="20" id="t7t-dh-S54"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="playbt" destination="ahU-KP-vrR" id="Ma5-uA-ac6"/>
+                        <outlet property="playslider" destination="DaA-Ef-jFM" id="NO0-4u-JcW"/>
+                        <outlet property="playtimeLabel" destination="iHQ-pO-bsg" id="dKR-Fs-S2k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,6 +64,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_pause" width="185" height="185"/>
         <image name="button_play" width="187" height="189"/>
     </resources>
 </document>
